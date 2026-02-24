@@ -1,0 +1,79 @@
+@import "tailwindcss";
+/* ==============================
+   ROOT (NO SCROLL, NO GAP)
+================================ */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ==============================
+   SNAP CONTAINER (SINGLE SCROLLER)
+================================ */
+.snap-container {
+  width: 100%;
+  height: 100dvh; /* 🔥 paling stabil desktop + mobile */
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scroll-snap-type: y mandatory;
+  overscroll-behavior: none;
+
+  /* hide scrollbar */
+  scrollbar-width: none;
+}
+.snap-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==============================
+   SECTIONS (ABSOLUT ZERO GAP)
+================================ */
+.snap-section {
+  width: 100%;
+  height: 100dvh; /* ⛔ JANGAN min-height */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+/* ==============================
+   INNER CONTENT (NO AUTO GAP)
+================================ */
+.section-inner {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0; /* ⛔ penting */
+  padding: 0; /* ⛔ penting */
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* ==============================
+   TEXT NORMALIZATION
+================================ */
+h1,
+h2,
+p {
+  margin: 0; /* ⛔ ini sering jadi penyebab “jarak bawah” */
+}
+
+/* OPTIONAL spacing manual (kalau mau) */
+.space-y > * + * {
+  margin-top: 1rem;
+}
+.clip-path-open {
+  clip-path: circle(150% at 100% 0%);
+}
+
+.clip-path-close {
+  clip-path: circle(0% at 100% 0%);
+}

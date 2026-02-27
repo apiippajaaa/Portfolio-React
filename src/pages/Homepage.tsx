@@ -3,6 +3,7 @@ import { useScrollSpy } from "../hooks/useScrollSpy";
 import Services from "../components/pages/homepage/Services";
 // import Skills from "../components/pages/homepage/Skills";
 import Project from "../components/pages/homepage/Project";
+import Contact from "../components/pages/homepage/Contact";
 
 export default function Homepage() {
   useScrollSpy();
@@ -12,6 +13,7 @@ export default function Homepage() {
       <Services />
       {/* <Skills /> */}
       <Project />
+      <Contact />
     </main>
   );
 }

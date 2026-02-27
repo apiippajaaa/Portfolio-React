@@ -25,6 +25,8 @@ body {
 
   /* hide scrollbar */
   scrollbar-width: none;
+
+  /* padding: 0px 16px 0px 16px; */
 }
 .snap-container::-webkit-scrollbar {
   display: none;

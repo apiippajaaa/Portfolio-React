@@ -9,7 +9,7 @@ export default function Hamburger() {
       <button
         onClick={() => setOpen(!open)}
         aria-label="Menu"
-        className="fixed top-8 right-8 z-50 w-10 h-10 "
+        className="relative z-50 w-10 h-10 flex items-center justify-center"
       >
         {/* ================= HAMBURGER SVG ================= */}
         <svg
@@ -38,7 +38,12 @@ export default function Hamburger() {
       </button>
 
       {/* ================= OVERLAY ================= */}
-      <div className="fixed inset-0 z-40">
+      <div
+        className={`
+          fixed inset-0 z-40
+          ${open ? "pointer-events-auto" : "pointer-events-none"}
+        `}
+      >
         {/* ===== CIRCLE REVEAL ===== */}
         <div
           onClick={() => setOpen(false)}
@@ -72,7 +77,7 @@ export default function Hamburger() {
                 key={item.label}
                 className={`
                   text-4xl md:text-5xl font-light tracking-[0.4em]
-                  transition-all duration-500 ease-out
+                  transition-all duration-300 ease-out
                   ${
                     open
                       ? "opacity-100 translate-y-0"

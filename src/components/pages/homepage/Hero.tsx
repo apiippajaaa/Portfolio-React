@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="snap-section relative min-h-[calc(var(--vh)*100)] flex items-center justify-center px-6 z-10 text-center"
+      className="snap-section relative min-h-[calc(var(--vh)*100)] flex items-center justify-center z-10 text-center"
     >
       <div className="max-w-6xl w-full mx-auto">
         <div
@@ -24,9 +24,8 @@ export default function Hero() {
           </h1>
 
           <p className="text-neutral-400 text-base md:text-lg leading-relaxed max-w-xl">
-            I build reliable, scalable systems and craft clean digital
-            experiences. Focused on performance, maintainability, and modern
-            backend architecture.
+            Fullstack engineer crafting scalable systems and visual experiences
+            in web, illustration, and video.
           </p>
 
           <div className="flex gap-3 md:gap-4 pt-2 md:pt-4 flex-wrap justify-center">

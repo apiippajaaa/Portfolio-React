@@ -35,7 +35,7 @@ const Project = () => {
 
   return (
     <section
-      id="services"
+      id="Projects"
       className="snap-section relative min-h-[calc(var(--vh)*100)] flex items-center z-10"
     >
       <div className="max-w-6xl mx-auto w-full relative ">

@@ -1,0 +1,102 @@
+html,
+body,
+a,
+button,
+input,
+textarea,
+select,
+label {
+  cursor: none !important;
+}
+
+/* BASE */
+
+.custom-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 40px;
+  height: 40px;
+
+  transform: translate(-30%, -30%);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ================= PEN ================= */
+
+.cursor-icon {
+  width: 22px;
+  height: 22px;
+
+  fill: white;
+
+  transform: rotate(100deg);
+
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.9))
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
+
+  transition: all 0.25s ease;
+}
+
+/* ================= STAR ================= */
+
+.cursor-star {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%) scale(0);
+
+  font-size: 14px;
+  color: white;
+
+  opacity: 0;
+
+  text-shadow: 0 0 6px white, 0 0 14px rgba(255, 255, 255, 0.8);
+
+  transition: all 0.2s ease;
+}
+
+/* ================= RING ================= */
+
+.cursor-ring {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+  border: 1.5px solid white;
+
+  transform: translate(-50%, -50%) scale(0);
+
+  opacity: 0;
+
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+
+  transition: all 0.25s ease;
+}
+
+/* ================= HOVER ================= */
+
+.cursor-hover .cursor-icon {
+  opacity: 0;
+}
+
+.cursor-hover .cursor-star {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.cursor-hover .cursor-ring {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.cursor-hidden {
+  opacity: 0;
+}

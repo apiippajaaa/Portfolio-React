@@ -1,6 +1,6 @@
 import { Mail, Linkedin, Instagram, MessageCircle } from "lucide-react";
 
-const Contact = () => {
+const GetInTouch = () => {
   const contacts = [
     {
       name: "Email",
@@ -26,7 +26,7 @@ const Contact = () => {
 
   return (
     <section
-      id="contact"
+      id="GetInTouch"
       className="relative snap-section min-h-[calc(var(--vh)*100)] flex items-center px-6 sm:px-10 lg:px-20"
     >
       <div className="max-w-6xl mx-auto w-full">
@@ -123,4 +123,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default GetInTouch;

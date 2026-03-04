@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <section
-      id="hero"
+      id="Hero"
       className="snap-section relative min-h-[calc(var(--vh)*100)] flex items-center justify-center z-10 text-center"
     >
       <div className="max-w-6xl w-full mx-auto">

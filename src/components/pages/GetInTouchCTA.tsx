@@ -1,72 +1,50 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom"; // kalau pakai react-router
-// kalau tidak pakai router, nanti ganti ke <a href="#contact">
+import { Link } from "react-router-dom";
 
 export default function GetInTouchCTA() {
   return (
-    <section className="snap-section relative min-h-[calc(var(--vh)*100)] flex items-center">
-      <div className="max-w-5xl mx-auto px-6 w-full relative">
-        {/* Background Glow */}
+    <section className="snap-section min-h-[calc(var(--vh)*100)] flex items-center justify-center">
+      <div className="relative flex items-center justify-center w-full max-w-4xl mx-auto px-6">
+        {/* CENTER PLANET (CTA) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 0.5, scale: 1 }}
-          viewport={{ once: false, amount: 0.4 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0 flex justify-center items-center pointer-events-none"
+          initial={{ opacity: 0, scale: 0.9, y: 40 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="relative z-10 text-center max-w-xl"
         >
-          <div className="w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[140px]" />
-        </motion.div>
-
-        {/* Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.4 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative z-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-12 text-center space-y-8"
-        >
-          {/* Small Label */}
-          <p className="tracking-[0.4em] uppercase text-xs font-semibold text-white/50">
-            Let’s Build Something
-          </p>
-
-          {/* Title */}
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">
             Have an Idea?
             <br />
-            Let’s Bring It to Life.
+            <span className="text-blue-400">Let's Build It Together</span>
           </h2>
 
-          {/* Description */}
-          <p className="text-white/60 max-w-2xl mx-auto leading-relaxed">
-            I'm always open to discussing new projects, creative ideas, or
-            opportunities to be part of your vision. Let’s create something
-            meaningful and impactful together.
+          <p className="text-white/60 mt-6">
+            I'm open to discussing new projects, creative ideas, or
+            opportunities to build something meaningful together.
           </p>
 
-          {/* Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.6 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <div className="mt-10">
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-3
-                px-8 py-4 rounded-2xl
-                text-sm font-semibold tracking-wide
-                bg-cyan-500 text-black
-                transition-all duration-300
-                hover:shadow-[0_0_40px_rgba(34,211,238,0.6)]
-                hover:scale-105"
+              className="
+              group
+              inline-flex items-center gap-2
+              px-7 py-3
+              text-sm font-semibold
+              border border-white/20
+              rounded-lg
+              hover:border-blue-400
+              hover:text-blue-400
+              transition-all duration-300
+              "
             >
               Get In Touch
-              <span className="transition-transform duration-300 group-hover:translate-x-1">
+              <span className="transition-transform group-hover:translate-x-1">
                 →
               </span>
             </Link>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

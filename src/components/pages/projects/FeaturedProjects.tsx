@@ -45,7 +45,7 @@ export default function FeaturedProjects() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.06,
+        staggerChildren: 0.08,
       },
     },
   };
@@ -53,43 +53,14 @@ export default function FeaturedProjects() {
   const card: Variants = {
     hidden: {
       opacity: 0,
-      y: 40,
-      scale: 0.98,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-
-      transition: {
-        type: "spring",
-        stiffness: 80,
-        damping: 18,
-        mass: 0.6,
-      },
-    },
-  };
-
-  const techContainer: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.03,
-      },
-    },
-  };
-
-  const techItem: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 8,
+      y: 30,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.25,
-        ease: "easeOut",
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
@@ -98,7 +69,13 @@ export default function FeaturedProjects() {
     <section className="py-28 px-6">
       <div className="max-w-6xl mx-auto">
         {/* TITLE */}
-        <div className="mb-16 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ margin: "-80px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mb-16 text-center"
+        >
           <h2 className="text-4xl font-semibold text-white">
             Featured Projects
           </h2>
@@ -106,7 +83,7 @@ export default function FeaturedProjects() {
           <p className="text-white/60 mt-3">
             Selected works showcasing modern development approach.
           </p>
-        </div>
+        </motion.div>
 
         {/* GRID */}
         <motion.div
@@ -124,32 +101,26 @@ export default function FeaturedProjects() {
               key={index}
               variants={card}
               whileHover={{
-                y: -8,
+                y: -6,
                 scale: 1.02,
               }}
               transition={{
-                type: "spring",
-                stiffness: 200,
-                damping: 18,
+                duration: 0.25,
+                ease: "easeOut",
               }}
               className="group bg-neutral-900 rounded-2xl overflow-hidden
               border border-white/5
               hover:border-cyan-400/40
-              will-change-transform"
+              transform-gpu will-change-transform"
             >
               {/* IMAGE */}
               <div className="overflow-hidden">
-                <motion.img
+                <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-52 object-cover"
-                  whileHover={{
-                    scale: 1.08,
-                  }}
-                  transition={{
-                    duration: 0.5,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-52 object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                 />
               </div>
 
@@ -162,22 +133,18 @@ export default function FeaturedProjects() {
                 <p className="text-white/60 text-sm">{project.description}</p>
 
                 {/* TECH STACK */}
-                <motion.div
-                  variants={techContainer}
-                  className="flex flex-wrap gap-2 pt-2"
-                >
+                <div className="flex flex-wrap gap-2 pt-2">
                   {project.tech.map((tech, i) => (
-                    <motion.span
+                    <span
                       key={i}
-                      variants={techItem}
                       className="text-xs px-3 py-1 rounded-full
                       bg-white/5 text-white/70
                       border border-white/10"
                     >
                       {tech}
-                    </motion.span>
+                    </span>
                   ))}
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           ))}

@@ -88,30 +88,63 @@ export default function Hero() {
           variants={container}
           initial="hidden"
           animate="visible"
-          className="w-1/2 flex items-center px-16"
+          className="w-1/2 flex items-center px-24 py-24"
         >
-          <div className="max-w-xl space-y-6">
+          <div className="max-w-2xl space-y-10">
+            {/* small label */}
+            <motion.p
+              variants={fadeUp}
+              className="text-cyan-400/80 text-sm tracking-[0.3em] uppercase"
+            >
+              About
+            </motion.p>
+
+            {/* title */}
             <motion.h1
               variants={fadeUp}
-              className="text-7xl font-semibold text-white tracking-tight"
+              className="text-7xl font-extrabold text-white tracking-tight leading-[1.05]"
             >
               About <span className="text-cyan-400">Me</span>
             </motion.h1>
 
+            {/* description */}
             <motion.p
               variants={fadeUp}
-              className="text-white/70 text-lg leading-relaxed"
+              className="text-white/70 text-lg leading-relaxed max-w-xl"
             >
               I'm a front-end developer focused on building immersive,
               high-performance digital experiences with modern web technologies.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex gap-4">
-              <button className="px-7 py-3 bg-cyan-400 text-black font-medium rounded-full hover:scale-105 transition duration-300">
+            {/* buttons */}
+            <motion.div variants={fadeUp} className="flex gap-6 pt-4">
+              <button
+                className="
+        px-8 py-3
+        bg-cyan-400
+        text-black
+        font-medium
+        rounded-full
+        transition-all duration-300
+        hover:scale-105
+        hover:shadow-[0_0_25px_#22d3ee]
+        "
+              >
                 Download CV
               </button>
 
-              <button className="px-7 py-3 border border-white/40 text-white rounded-full hover:bg-white hover:text-black transition duration-300">
+              <button
+                className="
+        px-8 py-3
+        border border-white/30
+        text-white
+        rounded-full
+        transition-all duration-300
+        hover:bg-white
+        hover:text-black
+        hover:border-white
+        "
+              >
                 Contact Me
               </button>
             </motion.div>

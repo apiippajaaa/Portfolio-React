@@ -3,21 +3,25 @@ import { useEffect, useRef } from "react";
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement | null>(null);
 
+  // cek device
+  const isTouch =
+    typeof window !== "undefined" &&
+    window.matchMedia("(pointer: coarse)").matches;
+
   useEffect(() => {
+    if (isTouch) return; // stop kalau HP / tablet
+
     const cursor = cursorRef.current;
     if (!cursor) return;
 
-    /* ================= MOVE ================= */
     const moveCursor = (e: MouseEvent) => {
       cursor.style.left = `${e.clientX}px`;
       cursor.style.top = `${e.clientY}px`;
     };
 
-    /* ================= SHOW / HIDE ================= */
     const hideCursor = () => cursor.classList.add("cursor-hidden");
     const showCursor = () => cursor.classList.remove("cursor-hidden");
 
-    /* ================= HOVER DETECTION (DELEGATION) ================= */
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
 
@@ -34,7 +38,6 @@ export default function CustomCursor() {
       }
     };
 
-    /* ================= EVENTS ================= */
     window.addEventListener("mousemove", moveCursor);
     document.addEventListener("mouseleave", hideCursor);
     document.addEventListener("mouseenter", showCursor);
@@ -48,7 +51,9 @@ export default function CustomCursor() {
       document.removeEventListener("mouseover", handleMouseOver);
       document.removeEventListener("mouseout", handleMouseOut);
     };
-  }, []);
+  }, [isTouch]);
+
+  if (isTouch) return null;
 
   return (
     <div ref={cursorRef} className="custom-cursor">

@@ -68,9 +68,15 @@ const Skills = () => {
               className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6"
             >
               {/* Description */}
-              <p className="text-white/50 text-sm max-w-xl">
-                {skillGroups[active].description}
-              </p>
+              <div className="flex items-center gap-6 max-w-xl mx-auto">
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+
+                <p className="text-white/50 text-sm text-center whitespace-nowrap">
+                  {skillGroups[active].description}
+                </p>
+
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+              </div>
 
               {/* Skills Grid */}
               <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-4 mt-6">

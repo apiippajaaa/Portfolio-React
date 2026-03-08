@@ -1,4 +1,7 @@
 @import "tailwindcss";
+.font-sora {
+  font-family: "Sora", sans-serif;
+}
 /* ==============================
    ROOT (NO SCROLL, NO GAP)
 ================================ */

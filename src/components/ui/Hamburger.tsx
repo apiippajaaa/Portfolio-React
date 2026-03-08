@@ -74,19 +74,33 @@ export default function Hamburger() {
             {menuItems.map((item, i) => (
               <li
                 key={item.label}
-                className={`text-4xl md:text-5xl font-light tracking-[0.4em]
-                transition-all duration-300 ease-out
-                ${
-                  open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-                }`}
+                className={`text-2xl md:text-3xl font-light tracking-[0.35em]
+              transition-all duration-300 ease-out
+              ${
+                open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
                 style={{ transitionDelay: `${i * 100 + 300}ms` }}
               >
                 <Link
                   to={item.to}
                   onClick={() => setOpen(false)}
-                  className="text-white/70 hover:text-white transition-colors duration-300"
+                  className="group flex items-center justify-center gap-6 text-white/60 hover:text-white transition-all duration-300"
                 >
-                  {item.label}
+                  {/* divider */}
+                  {/* <span className="w-10 h-px bg-white/20 group-hover:bg-white transition" /> */}
+
+                  {/* text */}
+                  <span
+                    className="tracking-[0.35em]
+                  group-hover:tracking-[0.45em]
+                  transition-all duration-300
+                  group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+                  >
+                    {item.label}
+                  </span>
+
+                  {/* divider */}
+                  {/* <span className="w-10 h-px bg-white/20 group-hover:bg-white transition" /> */}
                 </Link>
               </li>
             ))}

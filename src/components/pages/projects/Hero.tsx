@@ -87,29 +87,37 @@ export default function Hero() {
           variants={container}
           initial="hidden"
           animate="visible"
-          className="w-1/2 flex items-center px-16"
+          className="w-1/2 flex items-center px-24 py-20"
         >
-          <div className="max-w-xl space-y-6">
+          <div className="max-w-2xl space-y-10">
             <motion.h1
               variants={fadeUp}
-              className="text-7xl font-semibold text-white tracking-tight"
+              className="text-7xl font-bold font-sora text-white tracking-tight leading-[1.05]"
             >
-              My <span className="text-cyan-400">Portfolio</span>
+              My <span className="text-amber-500">Projects</span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
-              className="text-white/70 text-lg leading-relaxed"
+              className="text-white/70 text-lg leading-relaxed max-w-lg"
             >
               A collection of selected projects focused on building modern,
               immersive digital experiences.
             </motion.p>
 
             {/* wrapper animasi tombol */}
-            <motion.div variants={fadeUp}>
+            <motion.div variants={fadeUp} className="pt-4">
               <button
-                className="px-7 py-3 bg-cyan-400 text-black font-medium rounded-full 
-                hover:scale-105 transition duration-300"
+                className="
+        px-8 py-3
+        bg-blue-600
+        text-white
+        font-medium
+        rounded-full
+        transition-all duration-300
+        hover:scale-105
+        hover:shadow-[0_0_20px_#22d3ee]
+        "
               >
                 View Projects
               </button>

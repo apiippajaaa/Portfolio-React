@@ -6,17 +6,20 @@ export function useScrollSpy() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.find((e) => e.isIntersecting);
-        if (!visible) return;
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
 
-        history.replaceState(null, "", `#${visible.target.id}`);
+          const id = entry.target.id;
+          history.replaceState(null, "", `#${id}`);
+        });
       },
       {
         threshold: 0.6,
       }
     );
 
-    sections.forEach((s) => observer.observe(s));
+    sections.forEach((section) => observer.observe(section));
+
     return () => observer.disconnect();
   }, []);
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { experiences } from "../../../config/pages/Experience";
+import { experiences } from "../../../config/pages/experience";
 
 export default function Experiences() {
   const [showAll, setShowAll] = useState(false);

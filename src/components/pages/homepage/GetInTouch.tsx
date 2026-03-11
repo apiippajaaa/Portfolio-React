@@ -17,14 +17,14 @@ const fadeUp: Variants = {
   hidden: {
     opacity: 0,
     y: 40,
-    scale: 0.98,
+    scale: 1,
   },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
     transition: {
-      duration: 1.1,
+      duration: 1.2,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -33,14 +33,14 @@ const fadeUp: Variants = {
 const fadeSide: Variants = {
   hidden: {
     opacity: 0,
-    x: 40,
+    y: 30, // muncul dari bawah
   },
   visible: {
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
-      duration: 1.05,
-      ease: [0.22, 1, 0.36, 1],
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1], // smooth tanpa bounce
     },
   },
 };
@@ -52,7 +52,7 @@ const GetInTouch = () => {
     {
       name: "Email",
       icon: <Mail size={22} strokeWidth={1.5} />,
-      href: "mailto:your@email.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=afifmisbahuddin7@email.com",
     },
     {
       name: "LinkedIn",
@@ -62,12 +62,12 @@ const GetInTouch = () => {
     {
       name: "WhatsApp",
       icon: <MessageCircle size={22} strokeWidth={1.5} />,
-      href: "https://wa.me/628xxxxxxxxxx",
+      href: "https://wa.me/6285601569136",
     },
     {
       name: "Instagram",
       icon: <Instagram size={22} strokeWidth={1.5} />,
-      href: "https://instagram.com/yourusername",
+      href: "https://instagram.com/apiippajaaa",
     },
   ];
 

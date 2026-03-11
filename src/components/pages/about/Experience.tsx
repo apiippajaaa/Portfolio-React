@@ -30,12 +30,21 @@ export default function Experiences() {
 
         {/* ===== Timeline ===== */}
         <div className="relative">
-          {/* Vertical Line */}
+          {/* Vertical Timeline Line */}
           <div
-            className="hidden lg:block absolute left-1/2 top-0 h-full w-px
-            bg-gradient-to-b from-transparent via-cyan-400/40 to-transparent"
+            className="
+              absolute
+              left-1/2
+              -translate-x-1/2
+              top-0
+              bottom-0
+              w-[2px]
+              bg-gradient-to-b
+              from-transparent
+              via-cyan-400/40
+              to-transparent
+              "
           />
-
           <motion.div layout className="space-y-20">
             <AnimatePresence mode="popLayout">
               {visibleData.map((item, index) => {
